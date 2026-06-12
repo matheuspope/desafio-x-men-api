@@ -1,0 +1,1 @@
+ALTER TABLE "discoveredMutants" ALTER COLUMN "threatLevel" SET DATA TYPE text;
