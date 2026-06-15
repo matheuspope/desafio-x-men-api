@@ -1,3 +1,17 @@
 ###
 GET  http://localhost:3333/discoveredMutants
 Content-Type: application/json
+
+###
+POST http://localhost:3333/discoveredMutants
+Content-Type: application/json
+
+{
+  "name": "Kurt Wagner",
+  "codename": "Nightcrawler" ,
+  "power":  "Line-of-sight teleportation through a brimstone dimension, superhuman agility, wall-crawling, and a prehensile tail.",
+  "threatLevel": "beta",
+  "teamId": "5ae93029-9fcb-4b8b-887c-56d5307b07b4"
+ 
+
+}

@@ -36,6 +36,13 @@
       "when": 1781279000982,
       "tag": "0004_mute_vanisher",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1781546784881,
+      "tag": "0005_friendly_lionheart",
+      "breakpoints": true
     }
   ]
 }

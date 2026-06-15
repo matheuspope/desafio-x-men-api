@@ -2,9 +2,7 @@ import { fastify } from "fastify";
 import { db } from "./src/database/client";
 import { discoveredMutants } from "./src/database/schema";
 
-
-
-const server =  fastify();
+const server = fastify();
 
 server.get("/discoveredMutants", async (request, reply) => {
   const mutants = await db
@@ -18,31 +16,33 @@ server.get("/discoveredMutants", async (request, reply) => {
     .from(discoveredMutants);
 
   console.log(mutants);
-        return reply.send({mutants})
-
+  return reply.send({ mutants });
 });
 
 server.post("/discoveredMutants", async (request, reply) => {
-  const { name, codename, power, threatLevel} = request.body as {
-    name: string,
-    codename: string,
-    power: string,
-    threatLevel: string
-  }
+  const { name, codename, power, threatLevel, teamId } = request.body as {
+    name: string;
+    codename: string;
+    power: string;
+    threatLevel: string;
+    teamId: string;
+  };
 
   const newMutants = await db
-  .insert(discoveredMutants)
-  .values({
-    name,
-    codename,
-    power,
-    threatLevel,
-  }).returning()
-  
+    .insert(discoveredMutants)
+    .values({
+      name,
+      codename,
+      power,
+      threatLevel,
+      teamId
+    })
+    .returning();
 
- return reply.status(201).send({discoveredMutants: newMutants[0].id})
+  return reply.status(201).send({ discoveredMutants: newMutants[0].id });
 });
 
+server
 
 
 server.listen({ port: 3333 }).then(() => {
