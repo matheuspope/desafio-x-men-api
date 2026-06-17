@@ -1,0 +1,1 @@
+ALTER TABLE "discoveredMutants" DROP COLUMN "powerLevel";

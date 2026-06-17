@@ -1,0 +1,1 @@
+ALTER TABLE "discoveredMutants" ADD COLUMN "powerLevel" text NOT NULL;

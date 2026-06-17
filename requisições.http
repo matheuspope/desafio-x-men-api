@@ -2,16 +2,18 @@
 GET  http://localhost:3333/discoveredMutants
 Content-Type: application/json
 
+
+###
+GET http://localhost:3333/discoveredMutants
+
 ###
 POST http://localhost:3333/discoveredMutants
 Content-Type: application/json
 
 {
-  "name": "Kurt Wagner",
-  "codename": "Nightcrawler" ,
-  "power":  "Line-of-sight teleportation through a brimstone dimension, superhuman agility, wall-crawling, and a prehensile tail.",
-  "threatLevel": "beta",
+  "name": "Bobby Drake",
+  "codename": "Iceman",
+  "power": "Omega-level cryokinesis. Can drop his body temperature to absolute zero, freeze moisture in the air to create structures, ice clones, and organic ice armor." ,
+  "threatLevel": "Omega",
   "teamId": "5ae93029-9fcb-4b8b-887c-56d5307b07b4"
- 
-
 }

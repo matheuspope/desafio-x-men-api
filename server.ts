@@ -1,10 +1,18 @@
 import { fastify } from "fastify";
 import { db } from "./src/database/client";
 import { discoveredMutants } from "./src/database/schema";
+import {eq} from "drizzle-orm"
+
 
 const server = fastify();
 
 server.get("/discoveredMutants", async (request, reply) => {
+
+    const {threatLevel} = request.query as {
+      threatLevel?: string
+    }
+   
+    
   const mutants = await db
     .select({
       id: discoveredMutants.id,
@@ -13,8 +21,8 @@ server.get("/discoveredMutants", async (request, reply) => {
       power: discoveredMutants.power,
       threatLevel: discoveredMutants.threatLevel,
     })
-    .from(discoveredMutants);
-
+    .from(discoveredMutants).where(eq(discoveredMutants.threatLevel, threatLevel))
+  
   console.log(mutants);
   return reply.send({ mutants });
 });
@@ -35,15 +43,14 @@ server.post("/discoveredMutants", async (request, reply) => {
       codename,
       power,
       threatLevel,
-      teamId
+      teamId,
     })
     .returning();
 
+  server.post("/teams", async (request, reply) => {});
+
   return reply.status(201).send({ discoveredMutants: newMutants[0].id });
 });
-
-server
-
 
 server.listen({ port: 3333 }).then(() => {
   console.log("HTTP is running!");

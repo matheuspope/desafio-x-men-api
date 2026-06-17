@@ -43,6 +43,48 @@
       "when": 1781546784881,
       "tag": "0005_friendly_lionheart",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1781555384279,
+      "tag": "0006_petite_hawkeye",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1781556553052,
+      "tag": "0007_massive_stardust",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1781626171937,
+      "tag": "0008_wise_william_stryker",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1781633952895,
+      "tag": "0009_superb_nightmare",
+      "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1781634473784,
+      "tag": "0010_strong_rafael_vega",
+      "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1781634741493,
+      "tag": "0011_eager_scream",
+      "breakpoints": true
     }
   ]
 }
